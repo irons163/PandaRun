@@ -10,18 +10,14 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.drawable.Drawable;
 
-import com.example.try_gameengine.framework.CommonUtil;
-
 public class BitmapUtil {
 	static Context context;
-	
-public static Bitmap bar;
+	public static Bitmap bar;
 	public static Bitmap s0,s1,s2,s3,s4,s5,s6,s7,s8,s9,dot;
 	public static Bitmap common,happy,away;
 	
 	public static void initBitmap(Context context){
 		BitmapUtil.context = context;
-//		initBitmap();
 		final BitmapFactory.Options options = new BitmapFactory.Options();
 		options.inSampleSize = 1;
 		options.inJustDecodeBounds = false;
@@ -43,12 +39,7 @@ public static Bitmap bar;
 		away = BitmapFactory.decodeResource(context.getResources(), R.drawable.away);
 	}
 	
-	public static void resizeToolBmp(){
-		
-	}
-	
 	public static Bitmap createSpecificSizeBitmap(Drawable drawable, int width, int height) {
-		
 		Bitmap bitmap = Bitmap.createBitmap(width, height,
 				Bitmap.Config.ARGB_8888);
 		Canvas canvas = new Canvas(bitmap); 
@@ -60,7 +51,6 @@ public static Bitmap bar;
 	public static Bitmap getBitmap(String path) {
 		try {
 			InputStream is = context.getAssets().open(path);
-
 			return BitmapFactory.decodeStream(is);
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -74,11 +64,8 @@ public static Bitmap bar;
 	}
 	
 	public static Bitmap createBitmap(Bitmap bmp, float scale){
-		
 		Matrix matrix = new Matrix(); 
-		
 		matrix.postScale(scale, scale); 
-			
 		Bitmap resizeBmp = Bitmap.createBitmap(bmp,0,0,bmp.getWidth(), 
 		
 				bmp.getHeight(),matrix,true);
@@ -89,7 +76,6 @@ public static Bitmap bar;
 		float scaleX, scaleY, scale; 
 		scaleX = (float)w/s0.getWidth();
 		scaleY = (float)h/s0.getHeight();
-		
 		scale = scaleX < scaleY ? scaleX : scaleY;
 		
 		s0 = createBitmap(s0, scale);
@@ -103,7 +89,5 @@ public static Bitmap bar;
 		s8 = createBitmap(s8, scale);
 		s9 = createBitmap(s9, scale);
 		dot = createBitmap(dot, scale);
-
 	}
-	
 }

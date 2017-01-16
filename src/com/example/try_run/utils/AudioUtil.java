@@ -147,22 +147,6 @@ public class AudioUtil {
     public static void setSoundSt(boolean soundSt) {
     	AudioUtil.soundSt = soundSt;
     }
-    
-//    static AudioManager mgr;
-//    //播放音效
-//    public static void PlaySoundPool(int resid){
-//     if(soundSt==false){
-//      return;
-//     }
-//     Integer soundId = soundMap.get(resid);
-//     if(soundId!=null && soundSt){
-//    	 mgr = (AudioManager)context.getSystemService(Context.AUDIO_SERVICE);
-//      soundPool.play(soundId, 
-//        mgr.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 
-//        mgr.getStreamMaxVolume(AudioManager.STREAM_MUSIC), 1, 0, 1f);
-//      System.out.println("1--->"+resid);
-//     }
-//    }
      
     /**
      * 發出爆炸的聲音

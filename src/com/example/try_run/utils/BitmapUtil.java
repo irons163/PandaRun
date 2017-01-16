@@ -63,25 +63,15 @@ public class BitmapUtil {
 	}
 
 	private static void initBitmap() {
-		// redPoint = BitmapFactory.decodeResource(context.getResources(),
-		// R.drawable.red_point, null);
-		 greenPoint = BitmapFactory.decodeResource(context.getResources(),
-		 R.drawable.green_point);
-		// blackPoint = BitmapFactory.decodeResource(context.getResources(),
-		// R.drawable.black_point);
-		// whitePoint = BitmapFactory.decodeResource(context.getResources(),
-		// R.drawable.white_point);
-		// bluePoint =
-		// createSpecificSizeBitmap(context.getResources().getDrawable(R.drawable.blue_point),
-		// 200, 200);
-
+		greenPoint = BitmapFactory.decodeResource(context.getResources(),
+				R.drawable.green_point);
 		BitmapFactory.Options options = new BitmapFactory.Options();
 		// Make sure it is 24 bit color as our image processing algorithm
 		// expects this format
 		options.inPreferredConfig = Config.ARGB_8888;
 
 		options.inScaled = false;
-		
+
 		mapBg1 = BitmapFactory.decodeResource(context.getResources(),
 				R.drawable.ic_launcher, options);
 		redPoint = BitmapFactory.decodeResource(context.getResources(),
@@ -89,7 +79,7 @@ public class BitmapUtil {
 		bluePoint = BitmapFactory.decodeResource(context.getResources(),
 				R.drawable.blue_point, options);
 		yellowPoint = BitmapFactory.decodeResource(context.getResources(),
-				R.drawable.yellow_point, options);	
+				R.drawable.yellow_point, options);
 	}
 
 	public static Bitmap createSpecificSizeBitmap(Drawable drawable, int width,

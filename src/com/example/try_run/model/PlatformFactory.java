@@ -6,12 +6,8 @@ import java.util.Random;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.util.Log;
 import android.view.MotionEvent;
 
-import com.example.try_gameengine.framework.ALayer;
 import com.example.try_gameengine.framework.ILayer;
 import com.example.try_gameengine.framework.Layer;
 import com.example.try_gameengine.framework.Sprite;
@@ -36,7 +32,6 @@ public class PlatformFactory extends Layer{
     List<Platform> platforms = new ArrayList<Platform>();
     float screenWdith;
     ProtocolMainscreen delegate;
-//    var delegate:ProtocolMainscreen?
     
     // 随机生成一定长度的平台
     public void createPlatformRandom(){
@@ -55,27 +50,21 @@ public class PlatformFactory extends Layer{
         platform.setCollisionRectFEnable(true);
         Sprite platform_left = new Sprite(0, 0, false);
         platform_left.setBitmapAndAutoChangeWH(textureLeft);
-//        platform_left.anchorPoint = CGPointMake(0, 0.9);
-
         Sprite platform_right = new Sprite(0, 0, false);
         platform_right.setBitmapAndAutoChangeWH(textureRight);
-//        platform_right.anchorPoint = CGPointMake(0, 0.9)
         
         List<Sprite> arrPlatform = new ArrayList<Sprite>();
-        
         arrPlatform.add(platform_left);
         platform.setPosition(x, y);
         
         for (int i = 1; i < midNum; i++) {
             Sprite platform_mid = new Sprite(0, 0, false);
             platform_mid.setBitmapAndAutoChangeWH(textureMid);
-//            platform_mid.anchorPoint = CGPointMake(0, 0.9)
             arrPlatform.add(platform_mid);
         }
         
         arrPlatform.add(platform_right);
         platform.onCreate(arrPlatform);
-//        platform.name = "platform";
         this.addChild(platform);
         platform.calculateWHByChildern();
         
@@ -88,10 +77,8 @@ public class PlatformFactory extends Layer{
     public void move(float speed, Panda panda){
         for(Sprite p : platforms){
         	if(!p.isHidden() && panda.getFrame().top + panda.h > p.getFrame().top && panda.getFrame().top < p.getFrame().top + p.h && p.getX() - speed <= panda.getX() + panda.w && p.getX() + p.w >= panda.getX()){
-//        		Log.e("moveCollistion", panda.getX() + ":" + speed);
         		panda.setX(panda.getX() - speed);
         		panda.isDisableAutoForward = true;
-//        		Log.e("moveCollistion", panda.getX() + "");
         	}
             p.setPosition(p.getX() - speed, p.getY());
         }
@@ -125,5 +112,4 @@ public class PlatformFactory extends Layer{
 		// TODO Auto-generated method stub
 		
 	}
-
 }

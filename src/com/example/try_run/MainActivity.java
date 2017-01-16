@@ -23,9 +23,6 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		
-//		ImageView imageView = (ImageView) findViewById(R.id.imageView1);
-//		imageView.setBackgroundResource(R.drawable.ddefault);
-		
 		if(CommonUtil.screenHeight<=0){
 			DisplayMetrics dm = new DisplayMetrics();
 			getWindowManager().getDefaultDisplay().getMetrics(dm);
@@ -64,15 +61,6 @@ public class MainActivity extends Activity {
 			}
 		}).start();
 		
-//		Button button = (Button) findViewById(R.id.button1);
-//		button.setOnClickListener(new View.OnClickListener() {
-//			
-//			@Override
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//				startActivity(new Intent(MainActivity.this, GameActivity.class));
-//			}
-//		});
 	}
 
 	@Override

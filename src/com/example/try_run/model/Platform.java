@@ -36,12 +36,5 @@ public class Platform extends Sprite{
             }
         }
          this.height = 10.0f;
-
-//         self.physicsBody = SKPhysicsBody(rectangleOfSize: CGSizeMake(self.width, self.height),center:CGPointMake(self.width/2, 0))
-//        	        self.physicsBody?.categoryBitMask = BitMaskType.platform
-//        	        self.physicsBody?.dynamic = false
-//        	        self.physicsBody?.allowsRotation = false
-//        	        self.physicsBody?.restitution = 0
-//        	        self.zPosition = 20
 	}
 }

@@ -21,7 +21,6 @@ public class AppleFactory extends Layer {
 	Bitmap appleTexture;
     float sceneWidth = 0.0f;
     public List<Sprite> arrApple = new ArrayList<Sprite>();
-//    Thread timer = NSTimer()
     public float theY = 0.0f;
     private GameTimeUtil createAppleTimeUtil;
     
@@ -32,7 +31,6 @@ public class AppleFactory extends Layer {
     	
         this.sceneWidth = sceneWidth;
         this.theY = y;
-//        timer = NSTimer.scheduledTimerWithTimeInterval( 0.2, target: self, selector: "createApple", userInfo: nil, repeats: true)
         createAppleTimeUtil = new GameTimeUtil(200);
     }
     
@@ -42,13 +40,6 @@ public class AppleFactory extends Layer {
         if (randomInt > 8) {
             Sprite apple = new Sprite(0, 0, false);
             apple.setBitmapAndAutoChangeWH(appleTexture);
-//            apple.physicsBody = SKPhysicsBody(rectangleOfSize: apple.size)
-//            apple.physicsBody!.restitution = 0
-//            apple.physicsBody!.categoryBitMask = BitMaskType.apple
-//            apple.physicsBody!.dynamic = false
-//            apple.anchorPoint = CGPointMake(0, 0)
-//            apple.zPosition = 40
-//            apple.position  = CGPointMake(sceneWidth+apple.frame.width , theY + 150)
             apple.setPosition(sceneWidth+apple.w , theY - 150);
             arrApple.add(apple);
             this.addChild(apple);
